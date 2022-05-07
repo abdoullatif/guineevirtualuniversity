@@ -27,9 +27,19 @@
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
                             <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Aug 19</option>
-                                <option value="1">July 19</option>
-                                <option value="2">Jun 19</option>
+                                <option selected>
+                                    <script>
+                                        var d = new Date();
+                                        var ye = new Intl.DateTimeFormat('fr', { year: 'numeric' }).format(d);
+                                        var mo = new Intl.DateTimeFormat('fr', { month: 'short' }).format(d);
+                                        var da = new Intl.DateTimeFormat('fr', { day: '2-digit' }).format(d);
+                                        document.write(`${da} ${mo} ${ye}`);
+                                    </script>
+                                </option>
+                                <!--
+                                <option value="1">Mai 19</option>
+                                <option value="2">Juin 19</option>
+                                -->
                             </select>
                         </div>
                     </div>
@@ -71,7 +81,7 @@
                                 <div>
                                     <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
                                             class="set-doller"></sup>0</h2>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Bloque
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Professeur
                                     </h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
@@ -129,17 +139,17 @@
                                     <li>
                                         <i class="fas fa-circle text-primary font-10 mr-2"></i>
                                         <span class="text-muted">Inscrire</span>
-                                        <span class="text-dark float-right font-weight-medium">2346</span>
+                                        <span class="text-dark float-right font-weight-medium">2</span>
                                     </li>
                                     <li class="mt-3">
                                         <i class="fas fa-circle text-danger font-10 mr-2"></i>
                                         <span class="text-muted">Actif</span>
-                                        <span class="text-dark float-right font-weight-medium">2108</span>
+                                        <span class="text-dark float-right font-weight-medium">2</span>
                                     </li>
                                     <li class="mt-3">
                                         <i class="fas fa-circle text-cyan font-10 mr-2"></i>
                                         <span class="text-muted">Bloque</span>
-                                        <span class="text-dark float-right font-weight-medium">1204</span>
+                                        <span class="text-dark float-right font-weight-medium">0</span>
                                     </li>
                                 </ul>
                             </div>

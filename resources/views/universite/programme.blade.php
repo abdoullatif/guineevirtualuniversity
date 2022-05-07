@@ -35,9 +35,19 @@
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
                             <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Aug 19</option>
-                                <option value="1">July 19</option>
-                                <option value="2">Jun 19</option>
+                                <option selected>
+                                    <script>
+                                        var d = new Date();
+                                        var ye = new Intl.DateTimeFormat('fr', { year: 'numeric' }).format(d);
+                                        var mo = new Intl.DateTimeFormat('fr', { month: 'short' }).format(d);
+                                        var da = new Intl.DateTimeFormat('fr', { day: '2-digit' }).format(d);
+                                        document.write(`${da} ${mo} ${ye}`);
+                                    </script>
+                                </option>
+                                <!--
+                                <option value="1">Mai 19</option>
+                                <option value="2">Juin 19</option>
+                                -->
                             </select>
                         </div>
                     </div>
@@ -99,7 +109,8 @@
                                             class="col-sm-2 col-form-label">Classe</label>
                                         <div class="col-sm-10">
                                             <select class="custom-select mr-sm-2" id="classe" name="classe_id">
-                                                <!--<option selected>filiere</option>
+                                                <option selected>Classe</option>
+                                                <!--
                                                 @foreach($classes as $classe)
                                                 <option value="{{ $classe->classe_id }}">{{ $classe->nomClasse }} {{ $classe->nomFiliere }}</option>
                                                 @endforeach

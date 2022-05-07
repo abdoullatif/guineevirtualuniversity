@@ -7,18 +7,20 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
+                        
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('home') }}"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Acceuil</span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
-
+                        @if(Auth::user()->rolePersonne == 'etudiant' || Auth::user()->rolePersonne == 'professeur')
                         <li class="sidebar-item"> <a class="sidebar-link" href="{{ route('matter') }}"
                                 aria-expanded="false"><i data-feather="file-text" c
                                                          lass="feather-icon"></i><span
                                     class="hide-menu">Mes matieres
                                 </span></a>
                         </li>
+                        @endif
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('discussions') }}"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
                                     class="hide-menu">Discusions</span></a></li>
@@ -226,7 +228,7 @@
                         </li>
                         
 
-                         @if(Auth::user()->rolePersonne == 'superadmin' || Auth::user()->rolePersonne == 'admin')
+                         @if(Auth::user()->rolePersonne == 'superadmin')
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                                 aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
                                     class="hide-menu">Administrateur GVU </span></a>

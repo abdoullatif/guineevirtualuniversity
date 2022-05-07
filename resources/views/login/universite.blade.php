@@ -66,29 +66,33 @@
         <div>
 
             <!-- ============================================================== -->
-            <!-- Container fluid  -->
+            <!-- Container fluid  {{ asset('app-assets/assets/images/cours/cours.png') }} -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-            
-                <!-- Start First Cards -->  
-                @foreach($universites as $universite)
-                <div class="card">
-                    <div class="card-img" style="background-image:url({{ asset('app-assets/assets/images/cours/cours.png') }});">
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <a class="hover" href="{{ route('login', ['id'=> $universite->id]) }}">Se Connecter</a>
+
+                <div class="row">
+                    <!-- Start First Cards -->  
+                    @foreach($universites as $universite)
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-img" style="background-image:url({{ asset('uploads/universite/'.$universite->imagePersonne.'') }});">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <a class="hover" href="{{ route('login', ['id'=> $universite->id]) }}">Se Connecter</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+                                <a href="{{ route('login', ['id'=> $universite->id]) }}">
+                                    <h2>Universite {{ $universite->nomPersonne }} {{ $universite->prenomPersonne }}</h2>
+                                    <p>Adresse : {{ $universite->adressePersonne }}</p>
+                                </a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="card-content">
-                        <a href="{{ route('login', ['id'=> $universite->id]) }}">
-                            <h2>Universite {{ $universite->nomPersonne }} {{ $universite->prenomPersonne }}</h2>
-                            <p>{{ $universite->email }}</p>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
-                @endforeach
                 <!--
                 <div class="card">
                     <div class="card-img" style="background-image:url({{ asset('app-assets/assets/images/cours/cours.png') }});">
@@ -184,9 +188,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center text-muted">
-                All Rights Reserved &copy;. Designed and Developed by sooba</a>.
-            </footer>
+            @include('layouts.includes.footer')
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

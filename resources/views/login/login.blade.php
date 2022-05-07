@@ -58,7 +58,7 @@
             <div class="auth-box row">
                 <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url({{ asset('app-assets/assets/images/big/3.jpg') }});">
                 </div>
-                <div class="col-lg-5 col-md-7 bg-white">
+                <div class="col-lg  -5 col-md-7 bg-white">
                     <div class="p-3">
                         <div class="text-center">
                             <img src="{{ asset('app-assets/assets/images/big/icon.png') }}" alt="wrapkit">
@@ -87,7 +87,7 @@
                                     <button type="submit" class="btn btn-block btn-dark">Se connecter</button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    Vous n'est pas inscrit dans une universite ? <a href="/register" class="text-danger">Creer un compte</a>
+                                    Vous n'est pas inscrit dans une universite ? <a href="/register" class="text-danger"></a>
                                 </div>
                             </div>
                         </form>

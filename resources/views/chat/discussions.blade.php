@@ -27,9 +27,19 @@
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
                             <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Aug 19</option>
-                                <option value="1">July 19</option>
-                                <option value="2">Jun 19</option>
+                                <option selected>
+                                    <script>
+                                        var d = new Date();
+                                        var ye = new Intl.DateTimeFormat('fr', { year: 'numeric' }).format(d);
+                                        var mo = new Intl.DateTimeFormat('fr', { month: 'short' }).format(d);
+                                        var da = new Intl.DateTimeFormat('fr', { day: '2-digit' }).format(d);
+                                        document.write(`${da} ${mo} ${ye}`);
+                                    </script>
+                                </option>
+                                <!--
+                                <option value="1">Mai 19</option>
+                                <option value="2">Juin 19</option>
+                                -->
                             </select>
                         </div>
                     </div>
@@ -56,7 +66,7 @@
                                         <ul class="mailbox list-style-none">
                                             <li>
                                                 <div class="message-center">
-                                                    <!-- Message -->
+                                                    <!-- Amis message -->
                                                     <a href="javascript:void(0)"
                                                         class="message-item d-flex align-items-center border-bottom px-3 py-2">
                                                         <div class="user-img"><img src="{{ asset('app-assets/assets/images/users/1.jpg') }}"
@@ -65,17 +75,13 @@
                                                                 class="profile-status online float-right"></span>
                                                         </div>
                                                         <div class="w-75 d-inline-block v-middle pl-2">
-                                                            <h6 class="message-title mb-0 mt-1">Pavan kumar</h6>
+                                                            <h6 class="message-title mb-0 mt-1">users</h6>
                                                             <span
-                                                                class="font-12 text-nowrap d-block text-muted text-truncate">Just
-                                                                see
-                                                                the my new
-                                                                admin!</span>
-                                                            <span class="font-12 text-nowrap d-block text-muted">9:30
-                                                                AM</span>
+                                                                class="font-12 text-nowrap d-block text-muted text-truncate">message</span>
+                                                            <span class="font-12 text-nowrap d-block text-muted">9:30</span>
                                                         </div>
                                                     </a>
-                                                    <!-- Message -->
+                                                    <!-- Amis Message -->
                                                     
                                                     
                                                 </div>
@@ -88,7 +94,7 @@
                                         style="height: calc(100vh - 111px);">
                                         <!--chat Row -->
                                         <ul class="chat-list list-style-none px-3 pt-3">
-                                            <!--chat Row -->
+                                            <!--chat Row a-->
                                             <li class="chat-item list-style-none mt-3">
                                                 <div class="chat-img d-inline-block"><img
                                                         src="{{ asset('app-assets/assets/images/users/1.jpg') }}" alt="user"
@@ -104,10 +110,10 @@
                                                 <div class="chat-time d-block font-10 mt-1 mr-0 mb-3">10:56 am
                                                 </div>
                                             </li>
-                                            <!--chat Row -->
+                                            <!--chat Row a-->
                                             <li class="chat-item list-style-none mt-3">
                                                 <div class="chat-img d-inline-block"><img
-                                                        src="{{ asset('app-assets/assets/images/users/2.jpg') }}" alt="user"
+                                                        src="{{ asset('app-assets/assets/images/users/1.jpg') }}" alt="user"
                                                         class="rounded-circle" width="45">
                                                 </div>
                                                 <div class="chat-content d-inline-block pl-3">
@@ -119,7 +125,7 @@
                                                 <div class="chat-time d-block font-10 mt-1 mr-0 mb-3">10:57 am
                                                 </div>
                                             </li>
-                                            <!--chat Row -->
+                                            <!--chat Row b-->
                                             <li class="chat-item odd list-style-none mt-3">
                                                 <div class="chat-content text-right d-inline-block pl-3">
                                                     <div class="box msg p-2 d-inline-block mb-1">I
@@ -128,7 +134,7 @@
                                                     <br>
                                                 </div>
                                             </li>
-                                            <!--chat Row -->
+                                            <!--chat Row b-->
                                             <li class="chat-item odd list-style-none mt-3">
                                                 <div class="chat-content text-right d-inline-block pl-3">
                                                     <div class="box msg p-2 d-inline-block mb-1 box">
@@ -142,7 +148,7 @@
                                             <!--chat Row -->
                                             <li class="chat-item list-style-none mt-3">
                                                 <div class="chat-img d-inline-block"><img
-                                                        src="{{ asset('app-assets/assets/images/users/3.jpg') }}" alt="user"
+                                                        src="{{ asset('app-assets/assets/images/users/1.jpg') }}" alt="user"
                                                         class="rounded-circle" width="45">
                                                 </div>
                                                 <div class="chat-content d-inline-block pl-3">
@@ -203,9 +209,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center">
-                All Rights Reserved &copy;. Designed and Developed by Abdoulatif sooba.
-            </footer>
+            @include('layouts.includes.footer')
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
